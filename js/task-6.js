@@ -20,8 +20,7 @@ function createBoxes(amount) {
     box.classList.add("box");
     fragment.appendChild(box);
   }
-  collection.push(fragment);
-  return collection;
+  return fragment;
 }
 
 const create = document.querySelector('[data-create]');
@@ -30,7 +29,7 @@ create.addEventListener('click', () => {
   const amount = Number(choose.value);
   const boxes = createBoxes(amount);
   mainDiv.innerHTML = '';
-  boxes.forEach(box => mainDiv.appendChild(box));
+  mainDiv.appendChild(boxes);
 });
 destroy.addEventListener('click', () => {
   mainDiv.innerHTML = '';
