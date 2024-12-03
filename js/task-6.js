@@ -6,6 +6,7 @@ function getRandomHexColor() {
 
 const mainDiv = document.querySelector('#boxes');
 const choose = document.querySelector('[type="number"]');
+const fragment = document.createDocumentFragment();
 
 function createBoxes(amount) {
   const collection = [];
@@ -17,24 +18,11 @@ function createBoxes(amount) {
     box.style.backgroundColor = getRandomHexColor();
     box.textContent = i + 1;
     box.classList.add("box");
-    collection.push(box);
+    fragment.appendChild(box);
   }
+  collection.push(fragment);
   return collection;
 }
-
-// const createCollection = () => {
-//   const collection = [];
-//   const divs = createBoxes(amount);
-//   const height = 20;
-//   const width = 20;
-//   x = 0
-//   for (const div of divs) {
-//     div.style.height = height + 10 + 'px'; 
-//     div.style.width = height + 10 + 'px';
-//     div.style.backgroundColor = getRandomHexColor();
-//     div.textContent = x + 1;
-//   }
-// }
 
 const create = document.querySelector('[data-create]');
 const destroy = document.querySelector('[data-destroy]');

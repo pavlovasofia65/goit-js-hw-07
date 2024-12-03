@@ -24,6 +24,8 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+const fragment = document.createDocumentFragment();
 const ul = document.querySelector(".gallery");
 for (const image of images) {
   const li = document.createElement("li");
@@ -32,5 +34,6 @@ for (const image of images) {
   img.setAttribute("alt", image.alt);
   img.classList.add("image");
   li.appendChild(img);
-  ul.appendChild(li);
-}
+  fragment.appendChild(li);
+};
+ul.appendChild(fragment);
